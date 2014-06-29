@@ -3,9 +3,6 @@
 //\*------------------------------------*/
 
 @import "core/defaults";
-@import "core/mixins";
-
-
 ///*------------------------------------*\
 //    #USER SETTINGS
 //\*------------------------------------*/
@@ -13,8 +10,21 @@
 @import "settings";
 
 
-//Grid by this framework is optional
+///*------------------------------------*\
+//    #Mixins and states
+//\*------------------------------------*/
+@import "core/mixins";
+
+
+
+
+
+///*------------------------------------*\
+//    #GRID
+//\*------------------------------------*/
+// Grid by this framework is optional
 // You can use your own grids if you want to
+// If you're going to use something else, you should comment out this one
 @import "core/grid";
 
 ///*------------------------------------*\
@@ -30,37 +40,36 @@
 @import "base/base";
 @import "base/classes";
 
-//Bootstrap
+///*------------------------------------*\
+//    #BOOTSTRAP
+//\*------------------------------------*/
 //comment this line if bootstrap is not going to be used
 //if project doesn't need bootstrap at all, comment out bootstrap/loader line
 //You can also exclude any part of bootstrap by commenting out lines from loader
 //@import "bootstrap/loader";
 
 
-/* LAYOUT */
+///*------------------------------------*\
+//    #LAYOUTS
+//\*------------------------------------*/
 // Layout folder has main grid for project and other specific layout container classes
 // You should comment out the grid if you are using bootstrap grid(or some other grid)
 @import "layout/containers";
 
 
-/**
-* Modules
-*
-*/
-@import "modules/buttons";
-@import "modules/forms";
-@import "modules/lists";
+///*------------------------------------*\
+//    #MODULES
+//\*------------------------------------*/
+@import "modules/header";
+@import "modules/footer";
 
 
-/* Non-modular */
-// Non modular and element/page specific styles goes here.
-// Usage of this styles should be kept minimal to maintain the modular structure
-// Only should be used if an element has unique properties that cannot be done with modular styles
-// _header.scss is just an example, delete and add your own styles
-@import "non-modular/header";
-@import "non-modular/footer";
-@import "non-modular/general";
-@import "non-modular/mobile";
+
+
+///*------------------------------------*\
+//    #GLOBAL STATES
+//\*------------------------------------*/
+@import "core/states";
 
 /* Shame
 // All your shameful additions on the css that you make in a hurry goes here.
