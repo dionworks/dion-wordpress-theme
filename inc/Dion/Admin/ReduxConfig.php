@@ -22,6 +22,7 @@ class ReduxConfig
     {
 
         if (!class_exists('ReduxFramework')) {
+            echo 'noredux';
             return;
         }
 

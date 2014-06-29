@@ -9,7 +9,11 @@
     "autoload": {
         "classmap": [
             "inc/Dion"
+        ],
+        "files" : [
+            "inc/vendor/redux-framework/redux-framework.php"
         ]
+
     },
     "extra": {
         "installer-paths": {

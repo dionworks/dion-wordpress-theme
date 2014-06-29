@@ -7,4 +7,5 @@ $baseDir = dirname(dirname($vendorDir));
 
 return array(
     $vendorDir . '/tgm/plugin-activation/class-tgm-plugin-activation.php',
+    $vendorDir . '/redux-framework/redux-framework.php',
 );
