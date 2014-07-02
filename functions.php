@@ -179,7 +179,6 @@ function site_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'site_wp_title', 10, 2 );
 
 
-
 // Theme options added theme
 
 add_action('wp_head', 'blogFavicon');
