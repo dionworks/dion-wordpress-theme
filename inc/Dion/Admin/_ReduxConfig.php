@@ -250,10 +250,9 @@ class ReduxConfig
         }
 
         // ACTUAL DECLARATION OF SECTIONS
-
         $this->sections[] = array(
-            'icon'   => 'el-icon-cogs',
-            'title'  => __('General Settings', 'redux-framework-demo'),
+            'icon' => 'el-icon-cogs',
+            'title' => __('General Settings', 'redux-framework'),
             'fields' => array(
                 array(
                     'id' => 'favicon',
@@ -266,7 +265,7 @@ class ReduxConfig
                     'default' => array('url' => get_template_directory_uri().'/img/ico/favicon.ico'),
                 ),
                 array(
-                    'id' => 'favicon57',
+                    'id' => 'favicon_57',
                     'type' => 'media',
                     'url' => true,
                     'title' => __('Favicon 57', 'redux-framework'),
@@ -276,7 +275,7 @@ class ReduxConfig
                     'default' => array('url' => get_template_directory_uri().'/img/ico/apple-touch-icon-57-precomposed.png'),
                 ),
                 array(
-                    'id' => 'favicon72',
+                    'id' => 'favicon_72',
                     'type' => 'media',
                     'url' => true,
                     'title' => __('Favicon 72', 'redux-framework'),
@@ -286,7 +285,7 @@ class ReduxConfig
                     'default' => array('url' => get_template_directory_uri().'/img/ico/apple-touch-icon-72-precomposed.png'),
                 ),
                 array(
-                    'id' => 'favicon114',
+                    'id' => 'favicon_114',
                     'type' => 'media',
                     'url' => true,
                     'title' => __('Favicon 114', 'redux-framework'),
@@ -296,7 +295,7 @@ class ReduxConfig
                     'default' => array('url' => get_template_directory_uri().'/img/ico/apple-touch-icon-114-precomposed.png'),
                 ),
                 array(
-                    'id' => 'favicon144',
+                    'id' => 'favicon_144',
                     'type' => 'media',
                     'url' => true,
                     'title' => __('Favicon 144', 'redux-framework'),
@@ -306,7 +305,13 @@ class ReduxConfig
                     'default' => array('url' => get_template_directory_uri().'/img/ico/apple-touch-icon-144-precomposed.png'),
                 ),
                 array(
-                    'id' => 'customCSS',
+                    'id' => 'google_analytics',
+                    'type' => 'text',
+                    'title' => __('Google Analytics', 'redux-framework'),
+                    'desc' => __('Add Google Analytics code. Example: UA-12345678-9', 'redux-framework'),
+                ),
+                array(
+                    'id' => 'custom_css',
                     'type' => 'ace_editor',
                     'title' => __('Custom CSS Code', 'redux-framework'),
                     'subtitle' => __('Paste your CSS code here.', 'redux-framework'),
@@ -315,19 +320,13 @@ class ReduxConfig
                     'default' => "#header{\nmargin: 0 auto;\n}"
                 ),
                 array(
-                    'id' => 'customJS',
+                    'id' => 'custom_js',
                     'type' => 'ace_editor',
                     'title' => __('Custom JS Code', 'redux-framework'),
                     'subtitle' => __('Paste your JS code here.', 'redux-framework'),
                     'mode' => 'javascript',
                     'theme' => 'chrome',
                     'default' => "jQuery(document).ready(function(){\n\n});"
-                ),
-                array(
-                    'id' => 'googleAnalytics',
-                    'type' => 'text',
-                    'title' => __('Google Analytics', 'redux-framework'),
-                    'desc' => __('Add Google Analytics code. Example: UA-12345678-9', 'redux-framework'),
                 ),
             )
         );
@@ -338,7 +337,7 @@ class ReduxConfig
             'fields' => array(
 
                 array(
-                    'id'        => 'smFacebook',
+                    'id'        => 'sm_facebook',
                     'type'      => 'text',
                     'title'     => __('Facebook', 'redux-framework-demo'),
                     'validate'  => 'no_html',
@@ -346,7 +345,7 @@ class ReduxConfig
                 ),
 
                 array(
-                    'id'        => 'smTwitter',
+                    'id'        => 'sm_twitter',
                     'type'      => 'text',
                     'title'     => __('Twitter', 'redux-framework-demo'),
                     'validate'  => 'no_html',
@@ -354,7 +353,7 @@ class ReduxConfig
                 ),
 
                 array(
-                    'id'        => 'smVimeo',
+                    'id'        => 'sm_vimeo',
                     'type'      => 'text',
                     'title'     => __('Vimeo', 'redux-framework-demo'),
                     'validate'  => 'no_html',
@@ -362,6 +361,244 @@ class ReduxConfig
                 )
             ),
         );
+
+        $this->sections[] = array(
+            'icon'   => 'el-icon-cogs',
+            'title'  => __('General Settings', 'redux-framework-demo'),
+            'fields' => array(
+                array(
+                    'id'       => 'opt-layout',
+                    'type'     => 'image_select',
+                    'compiler' => true,
+                    'title'    => __('Main Layout', 'redux-framework-demo'),
+                    'subtitle' => __('Select main content and sidebar alignment. Choose between 1, 2 or 3 column layout.', 'redux-framework-demo'),
+                    'options'  => array(
+                        '1' => array('alt' => '1 Column', 'img' => ReduxFramework::$_url . 'assets/img/1col.png'),
+                        '2' => array('alt' => '2 Column Left', 'img' => ReduxFramework::$_url . 'assets/img/2cl.png'),
+                        '3' => array('alt' => '2 Column Right', 'img' => ReduxFramework::$_url . 'assets/img/2cr.png'),
+                        '4' => array('alt' => '3 Column Middle', 'img' => ReduxFramework::$_url . 'assets/img/3cm.png'),
+                        '5' => array('alt' => '3 Column Left', 'img' => ReduxFramework::$_url . 'assets/img/3cl.png'),
+                        '6' => array('alt' => '3 Column Right', 'img' => ReduxFramework::$_url . 'assets/img/3cr.png')
+                    ),
+                    'default'  => '2'
+                ),
+                array(
+                    'id'       => 'opt-textarea',
+                    'type'     => 'textarea',
+                    'required' => array('layout', 'equals', '1'),
+                    'title'    => __('Tracking Code', 'redux-framework-demo'),
+                    'subtitle' => __('Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.', 'redux-framework-demo'),
+                    'validate' => 'js',
+                    'desc'     => 'Validate that it\'s javascript!',
+                ),
+                array(
+                    'id'       => 'opt-ace-editor-css',
+                    'type'     => 'ace_editor',
+                    'title'    => __('CSS Code', 'redux-framework-demo'),
+                    'subtitle' => __('Paste your CSS code here.', 'redux-framework-demo'),
+                    'mode'     => 'css',
+                    'theme'    => 'monokai',
+                    'desc'     => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
+                    'default'  => "#header{\nmargin: 0 auto;\n}"
+                ),
+                /*
+                array(
+                    'id'        => 'opt-ace-editor-js',
+                    'type'      => 'ace_editor',
+                    'title'     => __('JS Code', 'redux-framework-demo'),
+                    'subtitle'  => __('Paste your JS code here.', 'redux-framework-demo'),
+                    'mode'      => 'javascript',
+                    'theme'     => 'chrome',
+                    'desc'      => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
+                    'default'   => "jQuery(document).ready(function(){\n\n});"
+                ),
+                array(
+                    'id'        => 'opt-ace-editor-php',
+                    'type'      => 'ace_editor',
+                    'title'     => __('PHP Code', 'redux-framework-demo'),
+                    'subtitle'  => __('Paste your PHP code here.', 'redux-framework-demo'),
+                    'mode'      => 'php',
+                    'theme'     => 'chrome',
+                    'desc'      => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
+                    'default'   => '<?php\nisset ( $redux ) ? true : false;\n?>'
+                ),
+                */
+                array(
+                    'id'       => 'opt-editor',
+                    'type'     => 'editor',
+                    'title'    => __('Footer Text', 'redux-framework-demo'),
+                    'subtitle' => __('You can use the following shortcodes in your footer text: [wp-url] [site-url] [theme-url] [login-url] [logout-url] [site-title] [site-tagline] [current-year]', 'redux-framework-demo'),
+                    'default'  => 'Powered by Redux Framework.',
+                ),
+                array(
+                    'id'       => 'password',
+                    'type'     => 'password',
+                    'username' => true,
+                    'title'    => 'SMTP Account',
+                    //'placeholder' => array('username' => 'Enter your Username')
+                )
+            )
+        );
+
+        $this->sections[] = array(
+            'icon'       => 'el-icon-website',
+            'title'      => __('Styling Options', 'redux-framework-demo'),
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                    'id'       => 'opt-select-stylesheet',
+                    'type'     => 'select',
+                    'title'    => __('Theme Stylesheet', 'redux-framework-demo'),
+                    'subtitle' => __('Select your themes alternative color scheme.', 'redux-framework-demo'),
+                    'options'  => array('default.css' => 'default.css', 'color1.css' => 'color1.css'),
+                    'default'  => 'default.css',
+                ),
+                array(
+                    'id'       => 'opt-color-background',
+                    'type'     => 'color',
+                    'output'   => array('.site-title'),
+                    'title'    => __('Body Background Color', 'redux-framework-demo'),
+                    'subtitle' => __('Pick a background color for the theme (default: #fff).', 'redux-framework-demo'),
+                    'default'  => '#FFFFFF',
+                    'validate' => 'color',
+                ),
+                array(
+                    'id'       => 'opt-background',
+                    'type'     => 'background',
+                    'output'   => array('body'),
+                    'title'    => __('Body Background', 'redux-framework-demo'),
+                    'subtitle' => __('Body background with image, color, etc.', 'redux-framework-demo'),
+                    //'default'   => '#FFFFFF',
+                ),
+                array(
+                    'id'       => 'opt-color-footer',
+                    'type'     => 'color',
+                    'title'    => __('Footer Background Color', 'redux-framework-demo'),
+                    'subtitle' => __('Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo'),
+                    'default'  => '#dd9933',
+                    'validate' => 'color',
+                ),
+                array(
+                    'id'       => 'opt-color-rgba',
+                    'type'     => 'color_rgba',
+                    'title'    => __('Color RGBA - BETA', 'redux-framework-demo'),
+                    'subtitle' => __('Gives you the RGBA color. Still quite experimental. Use at your own risk.', 'redux-framework-demo'),
+                    'default'  => array('color' => '#dd9933', 'alpha' => '1.0'),
+                    'output'   => array('body'),
+                    'mode'     => 'background',
+                    'validate' => 'colorrgba',
+                ),
+                array(
+                    'id'       => 'opt-color-header',
+                    'type'     => 'color_gradient',
+                    'title'    => __('Header Gradient Color Option', 'redux-framework-demo'),
+                    'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
+                    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+                    'default'  => array(
+                        'from' => '#1e73be',
+                        'to'   => '#00897e'
+                    )
+                ),
+                array(
+                    'id'       => 'opt-link-color',
+                    'type'     => 'link_color',
+                    'title'    => __('Links Color Option', 'redux-framework-demo'),
+                    'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
+                    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+                    //'regular'   => false, // Disable Regular Color
+                    //'hover'     => false, // Disable Hover Color
+                    //'active'    => false, // Disable Active Color
+                    //'visited'   => true,  // Enable Visited Color
+                    'default'  => array(
+                        'regular' => '#aaa',
+                        'hover'   => '#bbb',
+                        'active'  => '#ccc',
+                    )
+                ),
+                array(
+                    'id'       => 'opt-header-border',
+                    'type'     => 'border',
+                    'title'    => __('Header Border Option', 'redux-framework-demo'),
+                    'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
+                    'output'   => array('.site-header'), // An array of CSS selectors to apply this font style to
+                    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+                    'default'  => array(
+                        'border-color'  => '#1e73be',
+                        'border-style'  => 'solid',
+                        'border-top'    => '3px',
+                        'border-right'  => '3px',
+                        'border-bottom' => '3px',
+                        'border-left'   => '3px'
+                    )
+                ),
+                array(
+                    'id'       => 'opt-spacing',
+                    'type'     => 'spacing',
+                    'output'   => array('.site-header'), // An array of CSS selectors to apply this font style to
+                    'mode'     => 'margin', // absolute, padding, margin, defaults to padding
+                    'all'      => true, // Have one field that applies to all
+                    //'top'           => false,     // Disable the top
+                    //'right'         => false,     // Disable the right
+                    //'bottom'        => false,     // Disable the bottom
+                    //'left'          => false,     // Disable the left
+                    //'units'         => 'em',      // You can specify a unit value. Possible: px, em, %
+                    //'units_extended'=> 'true',    // Allow users to select any type of unit
+                    //'display_units' => 'false',   // Set to false to hide the units if the units are specified
+                    'title'    => __('Padding/Margin Option', 'redux-framework-demo'),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc'     => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default'  => array(
+                        'margin-top'    => '1px',
+                        'margin-right'  => '2px',
+                        'margin-bottom' => '3px',
+                        'margin-left'   => '4px'
+                    )
+                ),
+                array(
+                    'id'             => 'opt-dimensions',
+                    'type'           => 'dimensions',
+                    'units'          => 'em', // You can specify a unit value. Possible: px, em, %
+                    'units_extended' => 'true', // Allow users to select any type of unit
+                    'title'          => __('Dimensions (Width/Height) Option', 'redux-framework-demo'),
+                    'subtitle'       => __('Allow your users to choose width, height, and/or unit.', 'redux-framework-demo'),
+                    'desc'           => __('You can enable or disable any piece of this field. Width, Height, or Units.', 'redux-framework-demo'),
+                    'default'        => array(
+                        'width'  => 200,
+                        'height' => 100,
+                    )
+                ),
+                array(
+                    'id'       => 'opt-typography-body',
+                    'type'     => 'typography',
+                    'title'    => __('Body Font', 'redux-framework-demo'),
+                    'subtitle' => __('Specify the body font properties.', 'redux-framework-demo'),
+                    'google'   => true,
+                    'default'  => array(
+                        'color'       => '#dd9933',
+                        'font-size'   => '30px',
+                        'font-family' => 'Arial,Helvetica,sans-serif',
+                        'font-weight' => 'Normal',
+                    ),
+                ),
+                array(
+                    'id'       => 'opt-custom-css',
+                    'type'     => 'textarea',
+                    'title'    => __('Custom CSS', 'redux-framework-demo'),
+                    'subtitle' => __('Quickly add some CSS to your theme by adding it to this block.', 'redux-framework-demo'),
+                    'desc'     => __('This field is even CSS validated!', 'redux-framework-demo'),
+                    'validate' => 'css',
+                ),
+                array(
+                    'id'       => 'opt-custom-html',
+                    'type'     => 'textarea',
+                    'title'    => __('Custom HTML', 'redux-framework-demo'),
+                    'subtitle' => __('Just like a text box widget.', 'redux-framework-demo'),
+                    'desc'     => __('This field is even HTML validated!', 'redux-framework-demo'),
+                    'validate' => 'html',
+                ),
+            )
+        );
+
 
 
         $theme_info = '<div class="redux-framework-section-desc">';
@@ -434,6 +671,18 @@ class ReduxConfig
             'type' => 'divide',
         );
 
+        $this->sections[] = array(
+            'icon'   => 'el-icon-info-sign',
+            'title'  => __('Theme Information', 'redux-framework-demo'),
+            'desc'   => __('<p class="description">This is the Description. Again HTML is allowed</p>', 'redux-framework-demo'),
+            'fields' => array(
+                array(
+                    'id'      => 'opt-raw-info',
+                    'type'    => 'raw',
+                    'content' => $item_info,
+                )
+            ),
+        );
 
         if (file_exists(trailingslashit(dirname(__FILE__)) . 'README.html')) {
             $tabs['docs'] = array(
@@ -481,8 +730,8 @@ class ReduxConfig
             'display_version'    => $theme->get('Version'), // Version that appears at the top of your panel
             'menu_type'          => 'menu', //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
             'allow_sub_menu'     => true, // Show the sections below the admin menu item or not
-            'menu_title'         => __('Theme Options', 'redux-framework-demo'),
-            'page_title'         => __('Theme Options', 'redux-framework-demo'),
+            'menu_title'         => __('Sample Options', 'redux-framework-demo'),
+            'page_title'         => __('Sample Options', 'redux-framework-demo'),
 
             // You will need to generate a Google API key to use this feature.
             // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
@@ -491,7 +740,7 @@ class ReduxConfig
             'async_typography'   => false, // Use a asynchronous font on the front end or font string
             'admin_bar'          => true, // Show the panel pages on the admin bar
             'global_variable'    => '', // Set a different name for your global variable other than the opt_name
-            'dev_mode'           => false, // Show the time the page took to load, etc
+            'dev_mode'           => true, // Show the time the page took to load, etc
             'customizer'         => true, // Enable basic customizer support
             //'open_expanded'     => true,                    // Allow you to start the panel in an expanded way initially.
             //'disable_save_warn' => true,                    // Disable the save warning when a user changes a field
@@ -550,8 +799,32 @@ class ReduxConfig
             )
         );
 
+
+        // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
+        $this->args['share_icons'][] = array(
+            'url'   => 'https://github.com/ReduxFramework/ReduxFramework',
+            'title' => 'Visit us on GitHub',
+            'icon'  => 'el-icon-github'
+            //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
+        );
+        $this->args['share_icons'][] = array(
+            'url'   => 'https://www.facebook.com/pages/Redux-Framework/243141545850368',
+            'title' => 'Like us on Facebook',
+            'icon'  => 'el-icon-facebook'
+        );
+        $this->args['share_icons'][] = array(
+            'url'   => 'http://twitter.com/reduxframework',
+            'title' => 'Follow us on Twitter',
+            'icon'  => 'el-icon-twitter'
+        );
+        $this->args['share_icons'][] = array(
+            'url'   => 'http://www.linkedin.com/company/redux-framework',
+            'title' => 'Find us on LinkedIn',
+            'icon'  => 'el-icon-linkedin'
+        );
+
         // Panel Intro text -> before the form
-        /*if (!isset($this->args['global_variable']) || $this->args['global_variable'] !== false) {
+        if (!isset($this->args['global_variable']) || $this->args['global_variable'] !== false) {
             if (!empty($this->args['global_variable'])) {
                 $v = $this->args['global_variable'];
             } else {
@@ -563,8 +836,7 @@ class ReduxConfig
         }
 
         // Add content after the form.
-        //$this->args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo'); 
-        */
+        $this->args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo');
     }
 
 

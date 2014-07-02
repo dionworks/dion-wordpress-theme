@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d2ecd1359a8ed8c2dc23924573664bf8",
+    "hash": "16317f1b5b4e170471b1049c3b9c3639",
     "packages": [
         {
             "name": "composer/installers",
@@ -101,12 +101,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/redux-framework/redux-framework.git",
-                "reference": "ba30885db645e7e4c1371f6057067a9e88b4d140"
+                "reference": "4aeb4a3b9d983e06b32d1877355a0579a8231ce2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/ba30885db645e7e4c1371f6057067a9e88b4d140",
-                "reference": "ba30885db645e7e4c1371f6057067a9e88b4d140",
+                "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/4aeb4a3b9d983e06b32d1877355a0579a8231ce2",
+                "reference": "4aeb4a3b9d983e06b32d1877355a0579a8231ce2",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "redux",
                 "wordpress"
             ],
-            "time": "2014-06-29 02:44:23"
+            "time": "2014-06-30 05:16:16"
         },
         {
             "name": "tgm/plugin-activation",

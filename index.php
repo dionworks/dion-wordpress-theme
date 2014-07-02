@@ -19,8 +19,6 @@ get_header(); ?>
  * Put any query, variable, calcution etc. here.
  * Unless you really have no other option, you can do within content part
  */
-
-
 ?>
 
 <?php
@@ -29,16 +27,20 @@ get_header(); ?>
 	* In CMS usage this generally changes with custom queries
 	*/
 ?>
-<?php if ( have_posts() ) : ?>
+	<div class="site-content">
 
-	<?php /* Start the Loop */ ?>
-	<?php while ( have_posts() ) : the_post(); ?>
+		Index Home Page
 
-		
+		<?php if ( have_posts() ) : ?>
 
-	<?php endwhile; ?>
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>				
 
-<?php endif; ?>
+			<?php endwhile; ?>
+		<?php endif; ?>
 
-<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
+
+	</div><!-- .site-content -->
+
 <?php get_footer(); ?>

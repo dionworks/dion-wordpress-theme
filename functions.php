@@ -8,6 +8,8 @@ define('DION_THEME_URL',get_stylesheet_directory_uri());
 define('DION_THEME_DIR',get_stylesheet_directory());
 define('DION_COMPONENTS_URL',get_stylesheet_directory_uri().'/components');
 
+global $options;
+$options = get_option('dionOpt');
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
@@ -18,10 +20,10 @@ require DION_THEME_DIR.'/inc/vendor/autoload.php';
 //setting up the theme
 Dion\ThemeSetup::getInstance();
 
-add_filter('redux/options/dionOpt/sections', 'dynamic_section');
+//add_filter('redux/options/dionOpt/sections', 'dynamic_section');
 
 global $reduxConfig;
-//$reduxConfig = new Dion\Admin\ReduxConfig();
+$reduxConfig = new Dion\Admin\ReduxConfig();
 
 //start ajax
 Dion\Ajax::hooks();
@@ -31,8 +33,6 @@ Dion\Ajax::register('tester-event',function(){
 
 	$success = 'successful request';
 	$fail = 'failed request';
-	
-
 
 	update_option( 'dion-ajax-test', date('H:i:s') );
 
@@ -147,3 +147,112 @@ add_action( 'tgmpa_register', function(){
     tgmpa( $plugins, $config );
 
 });
+
+/**
+ * Create a nicely formatted and more specific title element text for output
+ * in head of document, based on current view.
+ *
+ */
+function site_wp_title( $title, $sep ) {
+    global $paged, $page;
+
+    if ( is_feed() ) {
+        return $title;
+    }
+
+    // Add the site name.
+    $title .= get_bloginfo( 'name', 'display' );
+
+    // Add the site description for the home/front page.
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description && ( is_home() || is_front_page() ) ) {
+        $title = "$title $sep $site_description";
+    }
+
+    // Add a page number if necessary.
+    if ( $paged >= 2 || $page >= 2 ) {
+        $title = "$title $sep " . sprintf( __( 'Page %s', 'dion' ), max( $paged, $page ) );
+    }
+
+    return $title;
+}
+add_filter( 'wp_title', 'site_wp_title', 10, 2 );
+
+
+
+// Theme options added theme
+
+add_action('wp_head', 'blogFavicon');
+add_action('wp_head', 'userCustomCss');
+add_action('wp_footer', 'userCustomJs');
+add_action('wp_footer', 'googleAnalytics');
+
+function blogFavicon(){
+    global $options;
+
+    $favicon     = $options['favicon']['url'];
+    $favicon_57  = $options['favicon57']['url'];
+    $favicon_72  = $options['favicon72']['url'];
+    $favicon_114 = $options['favicon114']['url'];
+    $favicon_144 = $options['favicon144']['url']; ?>
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="<?php echo $favicon; ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $favicon_144; ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $favicon_114; ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $favicon_72; ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo $favicon_57; ?>">
+<?php
+}
+
+function userCustomCss(){
+    // Prepare options
+    global $options;
+
+    // Custom CSS
+    if (isset($options['customCSS'])):?>
+        <style type="text/css">
+            <?php echo $options['customCSS']; ?>
+        </style>
+    <?php endif;
+}
+
+function userCustomJs(){
+    // Prepare options
+    global $options;
+
+    // Custom JS
+    if (isset($options['customJS'])):
+        ?>
+        <script type="text/javascript">
+            <?php echo $options['customJS']; ?>
+        </script>
+    <?php endif;
+}
+
+function googleAnalytics(){
+    global $options;
+
+    if ($options["googleAnalytics"]) {
+        ?>
+        <script type="text/javascript">
+            // Google Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '<?php echo $options["googleAnalytics"]; ?>']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google_analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    <?php
+    }
+}
+
+
+

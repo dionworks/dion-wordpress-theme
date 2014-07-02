@@ -8,8 +8,11 @@
  */
 ?>
 
+	<footer class="site-footer">
+		© 2014 Dion WP Theme.
+	</footer><!-- .site-footer -->
 
-<?php wp_footer(); ?>
+</div><!-- #container -->
 
-</body>
+<?php wp_footer(); ?></body>
 </html>

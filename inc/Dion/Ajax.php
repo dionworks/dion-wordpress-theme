@@ -1,4 +1,6 @@
-<?php namespace Dion;
+<?php 
+
+namespace Dion;
 
 class Ajax {
 	
