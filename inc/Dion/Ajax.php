@@ -25,7 +25,7 @@ class Ajax {
 			Ajax::listen();
 		});
 
-
+		// Front-end add ajax.js
 		add_action( 'wp_enqueue_scripts', function(){
 			global $wp;
 
@@ -34,14 +34,34 @@ class Ajax {
 
 
 			$amadeusAjax = array(
-
 				'ajaxUrl'    => admin_url('admin-ajax.php'),
 				'homeUrl'    => home_url(),
 				'action'     => 'amadeus_ajax',
 				'currentUrl' => home_url(add_query_arg(array(),$wp->request)),
-				
+			);
 
+			$permalink = get_permalink();
 
+			if( !empty($permalink) ) {
+				$amadeusAjax['currentUrl'] = get_permalink();
+
+			}
+
+			wp_localize_script( 'ajax.js', 'siteAjax', $amadeusAjax );
+		});
+
+		// Back-end add ajax.js
+		add_action( 'admin_enqueue_scripts', function(){
+			global $wp;
+
+			wp_enqueue_script('jquery');
+			wp_enqueue_script( 'ajax.js',get_template_directory_uri().'/js/ajax.js');
+
+			$amadeusAjax = array(
+				'ajaxUrl'    => admin_url('admin-ajax.php'),
+				'homeUrl'    => home_url(),
+				'action'     => 'amadeus_ajax',
+				'currentUrl' => home_url(add_query_arg(array(),$wp->request)),
 			);
 
 			$permalink = get_permalink();
@@ -106,4 +126,3 @@ class Ajax {
 	}
 
 }
-
