@@ -1,57 +1,5 @@
 [
     {
-        "name": "tgm/plugin-activation",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/thomasgriffin/TGM-Plugin-Activation.git",
-            "reference": "aece2efaf9bf465a30a6f7cf535c698a5fe49147"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/thomasgriffin/TGM-Plugin-Activation/zipball/aece2efaf9bf465a30a6f7cf535c698a5fe49147",
-            "reference": "aece2efaf9bf465a30a6f7cf535c698a5fe49147",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2"
-        },
-        "time": "2014-06-13 11:57:45",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "files": [
-                "class-tgm-plugin-activation.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "authors": [
-            {
-                "name": "Thomas Griffin",
-                "homepage": "http://thomasgriffinmedia.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Gary Jones",
-                "homepage": "https://github.com/GaryJones",
-                "role": "Developer"
-            }
-        ],
-        "description": "TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your WordPress themes (and plugins).",
-        "homepage": "http://tgmpluginactivation.com",
-        "keywords": [
-            "activation",
-            "library",
-            "plugins",
-            "theme",
-            "wordpress"
-        ]
-    },
-    {
         "name": "composer/installers",
         "version": "v1.0.16",
         "version_normalized": "1.0.16.0",
@@ -182,6 +130,58 @@
             "options",
             "plugin",
             "redux",
+            "wordpress"
+        ]
+    },
+    {
+        "name": "tgm/plugin-activation",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thomasgriffin/TGM-Plugin-Activation.git",
+            "reference": "aece2efaf9bf465a30a6f7cf535c698a5fe49147"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thomasgriffin/TGM-Plugin-Activation/zipball/aece2efaf9bf465a30a6f7cf535c698a5fe49147",
+            "reference": "aece2efaf9bf465a30a6f7cf535c698a5fe49147",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "time": "2014-06-13 11:57:45",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "class-tgm-plugin-activation.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Thomas Griffin",
+                "homepage": "http://thomasgriffinmedia.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Gary Jones",
+                "homepage": "https://github.com/GaryJones",
+                "role": "Developer"
+            }
+        ],
+        "description": "TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your WordPress themes (and plugins).",
+        "homepage": "http://tgmpluginactivation.com",
+        "keywords": [
+            "activation",
+            "library",
+            "plugins",
+            "theme",
             "wordpress"
         ]
     }

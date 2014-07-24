@@ -13,27 +13,22 @@ get_header(); ?>
  * Put any query, variable, calcution etc. here.
  * Unless you really have no other option, you can do within content part
  */
-
-
 ?>	
 
-<?php while ( have_posts() ) : the_post(); ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="site-content">
 
+		Single Page
 
-	<h1><?php the_title();?></h1>
-	<div>
-		<?php the_content();?>
-	</div>
-	<?php
-		// If comments are open or we have at least one comment, load up the comment template
-		if ( comments_open() || '0' != get_comments_number() )
-			comments_template();
-	?>
-	
-	</article>
-<?php endwhile; // end of the loop. ?>
+		<?php if ( have_posts() ) : ?>
 
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>				
 
-<?php get_sidebar(); ?>
+			<?php endwhile; ?>
+		<?php endif; ?>
+
+		<?php get_sidebar(); ?>
+
+	</div><!-- .site-content -->
+
 <?php get_footer(); ?>
