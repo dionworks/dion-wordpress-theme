@@ -53,17 +53,17 @@
     },
     {
         "name": "composer/installers",
-        "version": "v1.0.15",
-        "version_normalized": "1.0.15.0",
+        "version": "v1.0.16",
+        "version_normalized": "1.0.16.0",
         "source": {
             "type": "git",
             "url": "https://github.com/composer/installers.git",
-            "reference": "8e6a72a78f6cfd537fde3350720dfdc9ae3c5621"
+            "reference": "033679ad3cfc5ab759f9ed2a58881aeef13c342b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/composer/installers/zipball/8e6a72a78f6cfd537fde3350720dfdc9ae3c5621",
-            "reference": "8e6a72a78f6cfd537fde3350720dfdc9ae3c5621",
+            "url": "https://api.github.com/repos/composer/installers/zipball/033679ad3cfc5ab759f9ed2a58881aeef13c342b",
+            "reference": "033679ad3cfc5ab759f9ed2a58881aeef13c342b",
             "shasum": ""
         },
         "replace": {
@@ -74,7 +74,7 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2014-06-23 16:25:28",
+        "time": "2014-07-21 15:54:34",
         "type": "composer-installer",
         "extra": {
             "class": "Composer\\Installers\\Installer",
@@ -96,8 +96,7 @@
             {
                 "name": "Kyle Robinson Young",
                 "email": "kyle@dontkry.com",
-                "homepage": "https://github.com/shama",
-                "role": "Developer"
+                "homepage": "https://github.com/shama"
             }
         ],
         "description": "A multi-framework Composer library installer",
@@ -132,6 +131,7 @@
             "phpbb",
             "piwik",
             "ppi",
+            "puppet",
             "roundcube",
             "shopware",
             "silverstripe",
@@ -149,19 +149,19 @@
         "source": {
             "type": "git",
             "url": "https://github.com/redux-framework/redux-framework.git",
-            "reference": "ba30885db645e7e4c1371f6057067a9e88b4d140"
+            "reference": "9927400a80b5c4eb72b3163b79561a6340b265d3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/ba30885db645e7e4c1371f6057067a9e88b4d140",
-            "reference": "ba30885db645e7e4c1371f6057067a9e88b4d140",
+            "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/9927400a80b5c4eb72b3163b79561a6340b265d3",
+            "reference": "9927400a80b5c4eb72b3163b79561a6340b265d3",
             "shasum": ""
         },
         "require": {
             "composer/installers": "~1.0",
             "php": ">=5.2.0"
         },
-        "time": "2014-06-29 02:44:23",
+        "time": "2014-07-21 21:21:32",
         "type": "wordpress-plugin",
         "installation-source": "source",
         "notification-url": "https://packagist.org/downloads/",
