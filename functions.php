@@ -186,6 +186,32 @@ add_action('wp_head', 'userCustomCss');
 add_action('wp_footer', 'userCustomJs');
 add_action('wp_footer', 'googleAnalytics');
 
+add_action( 'login_enqueue_scripts', 'dionLoginLogo' );
+add_filter( 'login_headerurl',       'dionLoginLogoUrl' );
+add_filter( 'login_headertitle',     'dionLoginLogoUrlTitle' );
+
+// WordPress login page custom logo, description and url
+function dionLoginLogo() { 
+    global $options;
+    ?>
+    <style type="text/css">
+        body.login div#login h1 a {
+            background-image: url(<?php echo $options['logo']['url']; ?>);            
+            background-size: 100% 100%;
+            height: 80px;
+            padding-bottom: 30px;
+            width: 100% !important;
+        }
+    </style>
+<?php }
+
+function dionLoginLogoUrl() {
+    return 'http://dionworks.com';
+}
+function dionLoginLogoUrlTitle() {
+    return 'Dion Works - Works on Digital';
+}
+
 function blogFavicon(){
     global $options;
 

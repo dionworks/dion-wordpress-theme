@@ -256,6 +256,16 @@ class ReduxConfig
             'title'  => __('General Settings', 'redux-framework-demo'),
             'fields' => array(
                 array(
+                    'id' => 'logo',
+                    'type' => 'media',
+                    'url' => true,
+                    'title' => __('Logo', 'redux-framework'),
+                    'compiler' => 'true',
+                    'subtitle' => __('320x100 px','redux-framework'),
+                    'desc' => __('Upload your own login page logo. ', 'redux-framework'),
+                    'default' => array('url' => get_template_directory_uri().'/img/dion-works.png'),
+                ),
+                array(
                     'id' => 'favicon',
                     'type' => 'media',
                     'url' => true,
