@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "16317f1b5b4e170471b1049c3b9c3639",
+    "hash": "a7d72ed44bd3d862d9f86a369b64fee3",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.15",
+            "version": "v1.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "8e6a72a78f6cfd537fde3350720dfdc9ae3c5621"
+                "reference": "033679ad3cfc5ab759f9ed2a58881aeef13c342b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/8e6a72a78f6cfd537fde3350720dfdc9ae3c5621",
-                "reference": "8e6a72a78f6cfd537fde3350720dfdc9ae3c5621",
+                "url": "https://api.github.com/repos/composer/installers/zipball/033679ad3cfc5ab759f9ed2a58881aeef13c342b",
+                "reference": "033679ad3cfc5ab759f9ed2a58881aeef13c342b",
                 "shasum": ""
             },
             "replace": {
@@ -48,8 +48,7 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama",
-                    "role": "Developer"
+                    "homepage": "https://github.com/shama"
                 }
             ],
             "description": "A multi-framework Composer library installer",
@@ -84,6 +83,7 @@
                 "phpbb",
                 "piwik",
                 "ppi",
+                "puppet",
                 "roundcube",
                 "shopware",
                 "silverstripe",
@@ -93,7 +93,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-06-23 16:25:28"
+            "time": "2014-07-21 15:54:34"
         },
         {
             "name": "redux-framework/redux-framework",
@@ -101,12 +101,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/redux-framework/redux-framework.git",
-                "reference": "4aeb4a3b9d983e06b32d1877355a0579a8231ce2"
+                "reference": "9927400a80b5c4eb72b3163b79561a6340b265d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/4aeb4a3b9d983e06b32d1877355a0579a8231ce2",
-                "reference": "4aeb4a3b9d983e06b32d1877355a0579a8231ce2",
+                "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/9927400a80b5c4eb72b3163b79561a6340b265d3",
+                "reference": "9927400a80b5c4eb72b3163b79561a6340b265d3",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "redux",
                 "wordpress"
             ],
-            "time": "2014-06-30 05:16:16"
+            "time": "2014-07-21 21:21:32"
         },
         {
             "name": "tgm/plugin-activation",
