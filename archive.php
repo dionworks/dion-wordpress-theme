@@ -6,7 +6,7 @@
  *
  * @package _s
  */
-
+ 
 get_header(); ?>
 
 <?php
@@ -14,10 +14,7 @@ get_header(); ?>
  * MODEL AREA
  * Put any query, variable, calcution etc. here.
  * Unless you really have no other option, you can do within content part
- */
-
-
-?>
+ */?>
 <?php if ( have_posts() ) : ?>
 
 	
