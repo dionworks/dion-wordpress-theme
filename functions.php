@@ -279,5 +279,88 @@ function googleAnalytics(){
     }
 }
 
+/**
+ * Dion Works Dashboard
+ */
+
+// Disable all widgets and welcome panel
+add_action('wp_dashboard_setup', 'disableDashboardWidgets');
+remove_action('welcome_panel','wp_welcome_panel');
+
+// Welcome panel changed
+add_action('welcome_panel','dionworksWelcomePanel');
+add_action('after_switch_theme','dionworksWelcomePanelInit');
+
+// Admin custom css
+add_action('admin_head', 'adminCustomCss');
+
+
+function disableDashboardWidgets() { 
+    remove_meta_box('dashboard_right_now', 'dashboard', 'core');  
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'core');  
+    remove_meta_box('dashboard_incoming_links', 'dashboard', 'core');  
+    remove_meta_box('dashboard_plugins', 'dashboard', 'core');  
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'core');  
+    remove_meta_box('dashboard_recent_drafts', 'dashboard', 'core');  
+    remove_meta_box('dashboard_primary', 'dashboard', 'core');  
+    remove_meta_box('dashboard_activity', 'dashboard', 'core');  
+} 
+
+function dionworksWelcomePanel() {
+    echo '<div class="welcome-panel-content">
+            <div class="welcome-panel-content__logo">
+                <a href="http://dionworks.com?site='.get_bloginfo('url').'" title="Dion Works" target="_blank">
+                    <img src="'.DION_THEME_URL.'/img/dionworks-wp.png" alt="Dion Works"></div>  
+                </a>
+            <div class="welcome-panel-content__address">
+                Rumeli Cad. Itır Sok. Itır Apt.<br/>3/2 Nişantaşı / İstanbul<br/><br/>
+                0 212 571 51 22<br/><br/>
+                <a href="mailto:info@dionworks.com?Subject=Merhaba">info@dionworks.com</a><br/>
+            </div>
+        </div>';
+}
+
+function dionworksWelcomePanelInit() {
+    global $wpdb;
+    $wpdb->update($wpdb->usermeta,array('meta_value'=>1),array('meta_key'=>'show_welcome_panel'));
+}
+
+function adminCustomCss() {
+    echo '<style>
+        .welcome-panel-close,
+        #dashboard-widgets-wrap{
+            display:none;
+        }
+
+        .welcome-panel-content{
+            border: none;
+            padding: 20px 10px 30px;
+        }
+        .welcome-panel-content__logo{
+            max-height: 106px;
+            margin: 0px auto;
+            max-width: 506px;            
+        }
+        .welcome-panel-content__logo img{
+            height: auto;
+            width: 100%;
+        }
+        .welcome-panel-content__address{
+            color: #5c4a4a;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 38px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .welcome-panel-content__address a{
+            color: #5c4a4a;
+        }
+        .welcome-panel-content__address a:hover{
+            text-decoration: underline;
+        }
+    </style>';
+}
+
 
 
