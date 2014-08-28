@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a7d72ed44bd3d862d9f86a369b64fee3",
+    "hash": "b6baa49128a8f8a22d28f3a896ff8e53",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.16",
+            "version": "v1.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "033679ad3cfc5ab759f9ed2a58881aeef13c342b"
+                "reference": "74fb0a7a1a23696d9c8cc2fba5903f6711cdd067"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/033679ad3cfc5ab759f9ed2a58881aeef13c342b",
-                "reference": "033679ad3cfc5ab759f9ed2a58881aeef13c342b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/74fb0a7a1a23696d9c8cc2fba5903f6711cdd067",
+                "reference": "74fb0a7a1a23696d9c8cc2fba5903f6711cdd067",
                 "shasum": ""
             },
             "replace": {
@@ -64,6 +64,7 @@
                 "annotatecms",
                 "bitrix",
                 "cakephp",
+                "chef",
                 "codeigniter",
                 "concrete5",
                 "croogo",
@@ -93,7 +94,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-07-21 15:54:34"
+            "time": "2014-08-18 20:00:12"
         },
         {
             "name": "redux-framework/redux-framework",
@@ -101,12 +102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/redux-framework/redux-framework.git",
-                "reference": "9927400a80b5c4eb72b3163b79561a6340b265d3"
+                "reference": "79f7d5420a9fa856ee27060f1e63b4e2128a2e66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/9927400a80b5c4eb72b3163b79561a6340b265d3",
-                "reference": "9927400a80b5c4eb72b3163b79561a6340b265d3",
+                "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/79f7d5420a9fa856ee27060f1e63b4e2128a2e66",
+                "reference": "79f7d5420a9fa856ee27060f1e63b4e2128a2e66",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +135,7 @@
                 "redux",
                 "wordpress"
             ],
-            "time": "2014-07-21 21:21:32"
+            "time": "2014-08-28 00:25:50"
         },
         {
             "name": "tgm/plugin-activation",
@@ -142,12 +143,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thomasgriffin/TGM-Plugin-Activation.git",
-                "reference": "aece2efaf9bf465a30a6f7cf535c698a5fe49147"
+                "reference": "374285ef50f233453b1275912471d4ab9bd53220"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thomasgriffin/TGM-Plugin-Activation/zipball/aece2efaf9bf465a30a6f7cf535c698a5fe49147",
-                "reference": "aece2efaf9bf465a30a6f7cf535c698a5fe49147",
+                "url": "https://api.github.com/repos/thomasgriffin/TGM-Plugin-Activation/zipball/374285ef50f233453b1275912471d4ab9bd53220",
+                "reference": "374285ef50f233453b1275912471d4ab9bd53220",
                 "shasum": ""
             },
             "require": {
@@ -184,7 +185,7 @@
                 "theme",
                 "wordpress"
             ],
-            "time": "2014-06-13 11:57:45"
+            "time": "2014-03-17 15:23:47"
         }
     ],
     "packages-dev": [
@@ -198,6 +199,7 @@
         "redux-framework/redux-framework": 20,
         "tgm/plugin-activation": 20
     },
+    "prefer-stable": false,
     "platform": [
 
     ],
