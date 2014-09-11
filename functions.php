@@ -8,8 +8,28 @@ define('DION_THEME_URL',get_stylesheet_directory_uri());
 define('DION_THEME_DIR',get_stylesheet_directory());
 define('DION_COMPONENTS_URL',get_stylesheet_directory_uri().'/components');
 
+
+/**
+ * Get theme options 
+ */
 global $options;
 $options = get_option('dionOpt');
+
+/*
+function dionOpt($key, $applyContentFilter = false){
+    global $dionOpt;
+
+    if (isset($options[$key])) {
+
+        $content = $options[$key];
+        if ($applyContentFilter && is_string($content)) {
+            return apply_filters('the_content', $content);
+        }
+        return $content;
+    }
+}
+print_r($options);
+*/
 
 
 if ( ! isset( $content_width ) ) {
