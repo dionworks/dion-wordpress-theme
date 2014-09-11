@@ -307,8 +307,8 @@ class ReduxConfig
         );
 
         $this->sections[] = array(
-            'title'  => __('Import / Export', 'dion'),
-            'desc'   => __('Import and Export your Redux Framework settings from file, text or URL.', 'dion'),
+            'title'  => __('İçeri / Dışarı Aktar', 'dion'),
+            'desc'   => __('Tema ayarlarınızı buradan kaydedebilirsiniz. Bunun için dışarı aktarma bölümünü kullanabilirsiniz. Aynı şekilde içeri aktarmayı da kullanabilirsiniz. ', 'dion'),
             'icon'   => 'el-icon-refresh',
             'fields' => array(
                 array(
@@ -372,8 +372,8 @@ class ReduxConfig
             'display_version'    => $theme->get('Version'), // Version that appears at the top of your panel
             'menu_type'          => 'menu', //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
             'allow_sub_menu'     => true, // Show the sections below the admin menu item or not
-            'menu_title'         => __('Theme Options', 'dion'),
-            'page_title'         => __('Theme Options', 'dion'),
+            'menu_title'         => __('Tema Ayarları', 'dion'),
+            'page_title'         => __('Tema Ayarları', 'dion'),
 
             // You will need to generate a Google API key to use this feature.
             // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth

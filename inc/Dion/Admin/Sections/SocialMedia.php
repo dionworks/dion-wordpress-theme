@@ -11,7 +11,7 @@ class SocialMedia
 	public static function get()
 	{
 		$section = array(
-            'title' => __('Social Media', 'redux-framework'),
+            'title' => __('Sosyal Medya', 'redux-framework'),
             'icon' => 'el-icon-bullhorn',
             'fields' => array(
 
