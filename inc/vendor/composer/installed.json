@@ -98,19 +98,19 @@
         "source": {
             "type": "git",
             "url": "https://github.com/redux-framework/redux-framework.git",
-            "reference": "79f7d5420a9fa856ee27060f1e63b4e2128a2e66"
+            "reference": "3c6f4003afdf0a45dbaf48ba5800d6734a31058d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/79f7d5420a9fa856ee27060f1e63b4e2128a2e66",
-            "reference": "79f7d5420a9fa856ee27060f1e63b4e2128a2e66",
+            "url": "https://api.github.com/repos/redux-framework/redux-framework/zipball/3c6f4003afdf0a45dbaf48ba5800d6734a31058d",
+            "reference": "3c6f4003afdf0a45dbaf48ba5800d6734a31058d",
             "shasum": ""
         },
         "require": {
             "composer/installers": "~1.0",
             "php": ">=5.2.0"
         },
-        "time": "2014-08-28 00:25:50",
+        "time": "2014-09-10 16:19:41",
         "type": "wordpress-plugin",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",

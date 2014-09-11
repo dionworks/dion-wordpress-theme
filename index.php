@@ -29,7 +29,7 @@ get_header(); ?>
 ?>
 	<div class="site-content">
 
-		Index Home Page
+		<?php _e('Index Home Page', 'dion'); ?>
 
 		<?php if ( have_posts() ) : ?>
 

@@ -3,13 +3,14 @@
 * theme constants
 */
 
-define('DION_THEME_SLUG','wpdion');
+define('DION_THEME_SLUG','dion');
 define('DION_THEME_URL',get_stylesheet_directory_uri());
 define('DION_THEME_DIR',get_stylesheet_directory());
 define('DION_COMPONENTS_URL',get_stylesheet_directory_uri().'/components');
 
 global $options;
 $options = get_option('dionOpt');
+
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
@@ -335,6 +336,7 @@ function adminCustomCss() {
         .welcome-panel-content{
             border: none;
             padding: 20px 10px 30px;
+            max-width: 100%;
         }
         .welcome-panel-content__logo{
             max-height: 106px;

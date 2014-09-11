@@ -118,8 +118,8 @@ class ReduxConfig
     {
         //$sections = array();
         $sections[] = array(
-            'title'  => __('Section via hook', 'redux-framework-demo'),
-            'desc'   => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'redux-framework-demo'),
+            'title'  => __('Section via hook', 'dion'),
+            'desc'   => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'dion'),
             'icon'   => 'el-icon-paper-clip',
             // Leave this as a blank section, no options just some intro text set above.
             'fields' => array()
@@ -199,7 +199,7 @@ class ReduxConfig
         $screenshot  = $this->theme->get_screenshot();
         $class       = $screenshot ? 'has-screenshot' : '';
 
-        $customize_title = sprintf(__('Customize &#8220;%s&#8221;', 'redux-framework-demo'), $this->theme->display('Name'));
+        $customize_title = sprintf(__('Customize &#8220;%s&#8221;', 'dion'), $this->theme->display('Name'));
 
         ?>
         <div id="current-theme" class="<?php echo esc_attr($class); ?>">
@@ -219,14 +219,14 @@ class ReduxConfig
 
             <div>
                 <ul class="theme-info">
-                    <li><?php printf(__('By %s', 'redux-framework-demo'), $this->theme->display('Author')); ?></li>
-                    <li><?php printf(__('Version %s', 'redux-framework-demo'), $this->theme->display('Version')); ?></li>
-                    <li><?php echo '<strong>' . __('Tags', 'redux-framework-demo') . ':</strong> '; ?><?php printf($this->theme->display('Tags')); ?></li>
+                    <li><?php printf(__('By %s', 'dion'), $this->theme->display('Author')); ?></li>
+                    <li><?php printf(__('Version %s', 'dion'), $this->theme->display('Version')); ?></li>
+                    <li><?php echo '<strong>' . __('Tags', 'dion') . ':</strong> '; ?><?php printf($this->theme->display('Tags')); ?></li>
                 </ul>
                 <p class="theme-description"><?php echo $this->theme->display('Description'); ?></p>
                 <?php
                 if ($this->theme->parent()) {
-                    printf(' <p class="howto">' . __('This <a href="%1$s">child theme</a> requires its parent theme, %2$s.') . '</p>', __('http://codex.wordpress.org/Child_Themes', 'redux-framework-demo'), $this->theme->parent()->display('Name'));
+                    printf(' <p class="howto">' . __('This <a href="%1$s">child theme</a> requires its parent theme, %2$s.') . '</p>', __('http://codex.wordpress.org/Child_Themes', 'dion'), $this->theme->parent()->display('Name'));
                 }
                 ?>
 
@@ -250,145 +250,26 @@ class ReduxConfig
         }
 
         // ACTUAL DECLARATION OF SECTIONS
-
-        $this->sections[] = array(
-            'icon'   => 'el-icon-cogs',
-            'title'  => __('General Settings', 'redux-framework-demo'),
-            'fields' => array(
-                array(
-                    'id' => 'logo',
-                    'type' => 'media',
-                    'url' => true,
-                    'title' => __('Logo', 'redux-framework'),
-                    'compiler' => 'true',
-                    'subtitle' => __('320x100 px','redux-framework'),
-                    'desc' => __('Upload your own login page logo. ', 'redux-framework'),
-                    'default' => array('url' => get_template_directory_uri().'/img/dion-works.png'),
-                ),
-                array(
-                    'id' => 'favicon',
-                    'type' => 'media',
-                    'url' => true,
-                    'title' => __('Favicon', 'redux-framework'),
-                    'compiler' => 'true',
-                    'subtitle' => __('16x16 px','redux-framework'),
-                    'desc' => __('Upload your own favicon. ', 'redux-framework'),
-                    'default' => array('url' => get_template_directory_uri().'/img/ico/favicon.ico'),
-                ),
-                array(
-                    'id' => 'favicon57',
-                    'type' => 'media',
-                    'url' => true,
-                    'title' => __('Favicon 57', 'redux-framework'),
-                    'subtitle' => __('Apple touch icon 57 precomposed. PNG format.','redux-framework'),
-                    'compiler' => 'true',
-                    'desc' => __('Upload your own Apple touch icon 57 precomposed. ', 'redux-framework'),
-                    'default' => array('url' => get_template_directory_uri().'/img/ico/apple-touch-icon-57-precomposed.png'),
-                ),
-                array(
-                    'id' => 'favicon72',
-                    'type' => 'media',
-                    'url' => true,
-                    'title' => __('Favicon 72', 'redux-framework'),
-                    'subtitle' => __('Apple touch icon 72 precomposed. PNG format.','redux-framework'),
-                    'compiler' => 'true',
-                    'desc' => __('Upload your own Apple touch icon 72 precomposed. ', 'redux-framework'),
-                    'default' => array('url' => get_template_directory_uri().'/img/ico/apple-touch-icon-72-precomposed.png'),
-                ),
-                array(
-                    'id' => 'favicon114',
-                    'type' => 'media',
-                    'url' => true,
-                    'title' => __('Favicon 114', 'redux-framework'),
-                    'subtitle' => __('Apple touch icon 114 precomposed. PNG format.','redux-framework'),
-                    'compiler' => 'true',
-                    'desc' => __('Upload your own Apple touch icon 114 precomposed. ', 'redux-framework'),
-                    'default' => array('url' => get_template_directory_uri().'/img/ico/apple-touch-icon-114-precomposed.png'),
-                ),
-                array(
-                    'id' => 'favicon144',
-                    'type' => 'media',
-                    'url' => true,
-                    'title' => __('Favicon 144', 'redux-framework'),
-                    'subtitle' => __('Apple touch icon 144 precomposed. PNG format.','redux-framework'),
-                    'compiler' => 'true',
-                    'desc' => __('Upload your own Apple touch icon 144 precomposed. ', 'redux-framework'),
-                    'default' => array('url' => get_template_directory_uri().'/img/ico/apple-touch-icon-144-precomposed.png'),
-                ),
-                array(
-                    'id' => 'customCSS',
-                    'type' => 'ace_editor',
-                    'title' => __('Custom CSS Code', 'redux-framework'),
-                    'subtitle' => __('Paste your CSS code here.', 'redux-framework'),
-                    'mode' => 'css',
-                    'theme' => 'monokai',
-                    'default' => "#header{\nmargin: 0 auto;\n}"
-                ),
-                array(
-                    'id' => 'customJS',
-                    'type' => 'ace_editor',
-                    'title' => __('Custom JS Code', 'redux-framework'),
-                    'subtitle' => __('Paste your JS code here.', 'redux-framework'),
-                    'mode' => 'javascript',
-                    'theme' => 'chrome',
-                    'default' => "jQuery(document).ready(function(){\n\n});"
-                ),
-                array(
-                    'id' => 'googleAnalytics',
-                    'type' => 'text',
-                    'title' => __('Google Analytics', 'redux-framework'),
-                    'desc' => __('Add Google Analytics code. Example: UA-12345678-9', 'redux-framework'),
-                ),
-            )
-        );
-
-        $this->sections[] = array(
-            'title' => __('Social Media', 'redux-framework'),
-            'icon' => 'el-icon-bullhorn',
-            'fields' => array(
-
-                array(
-                    'id'        => 'smFacebook',
-                    'type'      => 'text',
-                    'title'     => __('Facebook', 'redux-framework-demo'),
-                    'validate'  => 'no_html',
-                    'default'   => '',
-                ),
-
-                array(
-                    'id'        => 'smTwitter',
-                    'type'      => 'text',
-                    'title'     => __('Twitter', 'redux-framework-demo'),
-                    'validate'  => 'no_html',
-                    'default'   => '',
-                ),
-
-                array(
-                    'id'        => 'smVimeo',
-                    'type'      => 'text',
-                    'title'     => __('Vimeo', 'redux-framework-demo'),
-                    'validate'  => 'no_html',
-                    'default'   => '',
-                )
-            ),
-        );
+                
+        $this->sections[] = Sections\GeneralSettings::get();
+        $this->sections[] = Sections\SocialMedia::get();
 
 
         $theme_info = '<div class="redux-framework-section-desc">';
-        $theme_info .= '<p class="redux-framework-theme-data description theme-uri">' . __('<strong>Theme URL:</strong> ', 'redux-framework-demo') . '<a href="' . $this->theme->get('ThemeURI') . '" target="_blank">' . $this->theme->get('ThemeURI') . '</a></p>';
-        $theme_info .= '<p class="redux-framework-theme-data description theme-author">' . __('<strong>Author:</strong> ', 'redux-framework-demo') . $this->theme->get('Author') . '</p>';
-        $theme_info .= '<p class="redux-framework-theme-data description theme-version">' . __('<strong>Version:</strong> ', 'redux-framework-demo') . $this->theme->get('Version') . '</p>';
+        $theme_info .= '<p class="redux-framework-theme-data description theme-uri">' . __('<strong>Theme URL:</strong> ', 'dion') . '<a href="' . $this->theme->get('ThemeURI') . '" target="_blank">' . $this->theme->get('ThemeURI') . '</a></p>';
+        $theme_info .= '<p class="redux-framework-theme-data description theme-author">' . __('<strong>Author:</strong> ', 'dion') . $this->theme->get('Author') . '</p>';
+        $theme_info .= '<p class="redux-framework-theme-data description theme-version">' . __('<strong>Version:</strong> ', 'dion') . $this->theme->get('Version') . '</p>';
         $theme_info .= '<p class="redux-framework-theme-data description theme-description">' . $this->theme->get('Description') . '</p>';
         $tabs = $this->theme->get('Tags');
         if (!empty($tabs)) {
-            $theme_info .= '<p class="redux-framework-theme-data description theme-tags">' . __('<strong>Tags:</strong> ', 'redux-framework-demo') . implode(', ', $tabs) . '</p>';
+            $theme_info .= '<p class="redux-framework-theme-data description theme-tags">' . __('<strong>Tags:</strong> ', 'dion') . implode(', ', $tabs) . '</p>';
         }
         $theme_info .= '</div>';
 
         if (file_exists(dirname(__FILE__) . '/../README.md')) {
             $this->sections['theme_docs'] = array(
                 'icon'   => 'el-icon-list-alt',
-                'title'  => __('Documentation', 'redux-framework-demo'),
+                'title'  => __('Documentation', 'dion'),
                 'fields' => array(
                     array(
                         'id'       => '17',
@@ -402,16 +283,16 @@ class ReduxConfig
 
         $this->sections[] = array(
             'icon'            => 'el-icon-list-alt',
-            'title'           => __('Customizer Only', 'redux-framework-demo'),
-            'desc'            => __('<p class="description">This Section should be visible only in Customizer</p>', 'redux-framework-demo'),
+            'title'           => __('Customizer Only', 'dion'),
+            'desc'            => __('<p class="description">This Section should be visible only in Customizer</p>', 'dion'),
             'customizer_only' => true,
             'fields'          => array(
                 array(
                     'id'              => 'opt-customizer-only',
                     'type'            => 'select',
-                    'title'           => __('Customizer Only Option', 'redux-framework-demo'),
-                    'subtitle'        => __('The subtitle is NOT visible in customizer', 'redux-framework-demo'),
-                    'desc'            => __('The field desc is NOT visible in customizer.', 'redux-framework-demo'),
+                    'title'           => __('Customizer Only Option', 'dion'),
+                    'subtitle'        => __('The subtitle is NOT visible in customizer', 'dion'),
+                    'desc'            => __('The field desc is NOT visible in customizer.', 'dion'),
                     'customizer_only' => true,
 
                     //Must provide key => value pairs for select options
@@ -426,8 +307,8 @@ class ReduxConfig
         );
 
         $this->sections[] = array(
-            'title'  => __('Import / Export', 'redux-framework-demo'),
-            'desc'   => __('Import and Export your Redux Framework settings from file, text or URL.', 'redux-framework-demo'),
+            'title'  => __('Import / Export', 'dion'),
+            'desc'   => __('Import and Export your Redux Framework settings from file, text or URL.', 'dion'),
             'icon'   => 'el-icon-refresh',
             'fields' => array(
                 array(
@@ -448,7 +329,7 @@ class ReduxConfig
         if (file_exists(trailingslashit(dirname(__FILE__)) . 'README.html')) {
             $tabs['docs'] = array(
                 'icon'    => 'el-icon-book',
-                'title'   => __('Documentation', 'redux-framework-demo'),
+                'title'   => __('Documentation', 'dion'),
                 'content' => nl2br(file_get_contents(trailingslashit(dirname(__FILE__)) . 'README.html'))
             );
         }
@@ -460,18 +341,18 @@ class ReduxConfig
         // Custom page help tabs, displayed using the help API. Tabs are shown in order of definition.
         $this->args['help_tabs'][] = array(
             'id'      => 'redux-help-tab-1',
-            'title'   => __('Theme Information 1', 'redux-framework-demo'),
-            'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo')
+            'title'   => __('Theme Information 1', 'dion'),
+            'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'dion')
         );
 
         $this->args['help_tabs'][] = array(
             'id'      => 'redux-help-tab-2',
-            'title'   => __('Theme Information 2', 'redux-framework-demo'),
-            'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo')
+            'title'   => __('Theme Information 2', 'dion'),
+            'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'dion')
         );
 
         // Set the help sidebar
-        $this->args['help_sidebar'] = __('<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-demo');
+        $this->args['help_sidebar'] = __('<p>This is the sidebar content, HTML is allowed.</p>', 'dion');
     }
 
     /**
@@ -491,8 +372,8 @@ class ReduxConfig
             'display_version'    => $theme->get('Version'), // Version that appears at the top of your panel
             'menu_type'          => 'menu', //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
             'allow_sub_menu'     => true, // Show the sections below the admin menu item or not
-            'menu_title'         => __('Theme Options', 'redux-framework-demo'),
-            'page_title'         => __('Theme Options', 'redux-framework-demo'),
+            'menu_title'         => __('Theme Options', 'dion'),
+            'page_title'         => __('Theme Options', 'dion'),
 
             // You will need to generate a Google API key to use this feature.
             // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
@@ -567,13 +448,13 @@ class ReduxConfig
             } else {
                 $v = str_replace('-', '_', $this->args['opt_name']);
             }
-            $this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
+            $this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'dion'), $v);
         } else {
-            $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo');
+            $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'dion');
         }
 
         // Add content after the form.
-        //$this->args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo'); 
+        //$this->args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'dion'); 
         */
     }
 

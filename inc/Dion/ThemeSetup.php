@@ -73,6 +73,7 @@ class ThemeSetup {
 		 * to change '_s' to the name of your theme in all the template files
 		 */
 		load_theme_textdomain( DION_THEME_SLUG, get_template_directory() . '/languages' );
+		
 
 		/**
 		 * Add default posts and comments RSS feed links to head

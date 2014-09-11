@@ -7,6 +7,8 @@ $baseDir = dirname(dirname($vendorDir));
 
 return array(
     'Dion\\Admin\\ReduxConfig' => $baseDir . '/inc/Dion/Admin/ReduxConfig.php',
+    'Dion\\Admin\\Sections\\GeneralSettings' => $baseDir . '/inc/Dion/Admin/Sections/GeneralSettings.php',
+    'Dion\\Admin\\Sections\\SocialMedia' => $baseDir . '/inc/Dion/Admin/Sections/SocialMedia.php',
     'Dion\\Ajax' => $baseDir . '/inc/Dion/Ajax.php',
     'Dion\\Mail\\Content' => $baseDir . '/inc/Dion/Mail/Content.php',
     'Dion\\Mail\\Sender' => $baseDir . '/inc/Dion/Mail/Sender.php',
