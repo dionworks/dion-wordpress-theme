@@ -6,8 +6,7 @@ namespace Dion\Admin\Sections;
  * Social Media sections
  */
 class SocialMedia
-{
-	
+{	
 	public static function get()
 	{
 		$section = array(
@@ -59,14 +58,6 @@ class SocialMedia
                     'id'        => 'smYouTube',
                     'type'      => 'text',
                     'title'     => __('YouTube', 'dion'),
-                    'validate'  => 'no_html',
-                    'default'   => '',
-                ),
-
-                array(
-                    'id'        => 'smVimeo',
-                    'type'      => 'text',
-                    'title'     => __('Vimeo', 'dion'),
                     'validate'  => 'no_html',
                     'default'   => '',
                 )
